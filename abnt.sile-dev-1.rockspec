@@ -20,7 +20,7 @@ build = {
   type = "builtin",
 
   modules = {
-    ["sile.classes.abnt"] = "classes/abnt/init.lua",
-    ["sile.packages.bibtex.styles"] = "packages/bibtex/styles/abnt.lua"
+    ["sile.classes.abnt"] = "classes/abnt.lua",
+    ["sile.packages.bibtex.styles.abnt"] = "packages/bibtex/styles/abnt.lua"
   },
 }
