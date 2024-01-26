@@ -1,0 +1,43 @@
+\begin[class=abnt]{document}
+
+\capa{
+\escola{
+NOME DA UNIVERSIDADE
+
+NOME DA UNIDADE
+
+NOME DO DEPARTAMENTO
+}
+
+\autor{Nome completo do aluno}
+
+\titulo{TÍTULO DO TRABALHO}
+
+\data{Cidade
+
+Ano}
+}
+
+\tableofcontents
+
+\use[module=packages.lorem]
+
+\capitulo{Introdução}
+
+\lorem[words=100]
+
+\capitulo{Desenvolvimento}
+
+\lorem[words=1000]
+
+\capitulo{Conclusão}
+
+\lorem[words=300]
+
+\capitulo{Bibliografia}
+
+\loadbibliography[file=exemplo.bib]
+
+\reference{livro}
+
+\end{document}
