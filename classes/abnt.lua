@@ -7,7 +7,7 @@ class.frontFrameset = {
     escola = {
         top = "4cm",
         left = "3cm",
-        right = "100%pw-2cm",
+        right = "100%pw-3cm",
         bottom = "8cm",
     },
     autor = {
@@ -17,7 +17,7 @@ class.frontFrameset = {
         right = "right(escola)"
     },
     titulo = {
-        top = "14   cm",
+        top = "14cm",
         bottom = "17cm",
         left = "left(escola)",
         right = "right(escola)"
@@ -62,11 +62,30 @@ function class:_init(options)
     self:loadPackage("frametricks")
     self:loadPackage("masters", {{ id = "right", firstContentFrame = self.firstContentFrame, frames = self.defaultFrameset }})
     self:loadPackage("twoside", { oddPageMaster = "right", evenPageMaster = "left" })
-     
-    SILE.settings.set("document.language", "pt")
+ 
+    SILE.settings:set("document.language", "pt")
     SILE.settings:set("font.family", "Times New Roman")
     SILE.settings:set("font.size", 12)
     SILE.settings:set("bibtex.style", "abnt")
+    
+    SILE.call("define", { command = "foliostyle"}, function (_, content)
+        if SILE.scratch.counters.folio.value % 2 ~= 0 then
+            SILE.call("raggedleft", {}, content)
+        else
+            SILE.call("raggedright", {}, content)
+        end
+    end)
+    
+    SILE.call("define", { command = "tableofcontents:header"}, function (_, _)
+        SILE.call("par")
+        SILE.call("noindent")
+        SILE.call("tableofcontents:headerfont", {}, function ()
+            SILE.typesetter:typeset("Sumário")
+        end)
+        SILE.call("medskip")
+        SILE.call("nofoliothispage")
+    end)
+  
 end
 
 function class:declareOptions()
@@ -100,6 +119,7 @@ function class:registerCommands()
                 })
             end
         end)
+        SILE.call("nofoliothispage")
         SILE.process(content)
         SILE.call("pagebreak")
     end, "Capa")
@@ -112,9 +132,9 @@ function class:registerCommands()
             SILE.process(content)
         end)
         SILE.call("skip", { height = "7%ph" })
-
+        SILE.call("nofoliothispage")
     end)
-
+    
     -- self:registerCommand("lista:ilustracoes", function(options, content)
     -- end, "Lista de ilustrações")
 
