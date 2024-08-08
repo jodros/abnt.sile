@@ -34,10 +34,8 @@ Ano}
 
 \lorem[words=300]
 
-\capitulo{Bibliografia}
-
-\loadbibliography[file=exemplo.bib]
-
-\reference{livro}
+%\capitulo{Bibliografia}
+%\loadbibliography[file=exemplo.bib]
+%\reference{livro}
 
 \end{document}
