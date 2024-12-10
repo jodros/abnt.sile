@@ -64,6 +64,7 @@ function class:_init(options)
     self:loadPackage("twoside", { oddPageMaster = "right", evenPageMaster = "left" })
  
     SILE.settings:set("document.language", "pt")
+    SILE.languageSupport.loadLanguage("pt")
     SILE.settings:set("font.family", "Times New Roman")
     SILE.settings:set("font.size", 12)
     SILE.settings:set("bibtex.style", "abnt")
@@ -72,6 +73,7 @@ function class:_init(options)
         if SILE.scratch.counters.folio.value % 2 ~= 0 then
             SILE.call("raggedleft", {}, content)
         else
+            SILE.call("noindent")
             SILE.call("raggedright", {}, content)
         end
     end)
