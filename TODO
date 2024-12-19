@@ -1,7 +1,8 @@
 - [] Ajustar espaço entre cidade e ano
-- [] Tornar compatível com o módulo config.sile
-- [] 10520 e 6023
+- [] Tornar compatível com markdown
+- [] Citações, normas 10520 e 6023
 - [] Tabelas
 - [] Ilustrações
-- [] toc
+- [] Sumário
+- [] Gerar metadados do PDF a partir das informações da capa
 
