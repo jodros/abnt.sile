@@ -63,11 +63,11 @@ function class:_init(options)
     self:loadPackage("masters", {{ id = "right", firstContentFrame = self.firstContentFrame, frames = self.defaultFrameset }})
     self:loadPackage("twoside", { oddPageMaster = "right", evenPageMaster = "left" })
  
-    SILE.settings:set("document.language", "pt")
     SILE.languageSupport.loadLanguage("pt")
+    SILE.settings:set("document.language", "pt")
     SILE.settings:set("font.family", "Times New Roman")
     SILE.settings:set("font.size", 12)
-    SILE.settings:set("bibtex.style", "abnt")
+    SILE.call("bibliographystyle", { lang = "pt-BR", style = "universidade-estadual-de-alagoas-abnt" })
     
     SILE.call("define", { command = "foliostyle"}, function (_, content)
         if SILE.scratch.counters.folio.value % 2 ~= 0 then
