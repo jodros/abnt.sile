@@ -22,4 +22,11 @@ build = {
   modules = {
     ["sile.classes.abnt"] = "classes/abnt.lua",
   },
+  install = {
+    lua = {
+        ["sile.packages.bibtex.csl.locales.locales-pt-BR"] = "packages/bibtex/csl/locales/locales-pt-BR.xml",
+        ["sile.packages.bibtex.csl.styles.universidade-estadual-de-alagoas-abnt"] = "packages/bibtex/csl/styles/universidade-estadual-de-alagoas-abnt.csl"
+  }
 }
+}
+
