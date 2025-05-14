@@ -58,6 +58,7 @@ function class:_init(options)
     plain._init(self, options)
 
     self:loadPackage("bibtex")
+    self:loadPackage("footnotes")
     self:loadPackage("tableofcontents")
     self:loadPackage("frametricks")
     self:loadPackage("masters", {{ id = "right", firstContentFrame = self.firstContentFrame, frames = self.defaultFrameset }})
